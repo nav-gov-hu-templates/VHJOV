@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:baseForm="https://soap.api.nav.gov.hu/definitions/model/2.0/baseForm/1.0"
+        xmlns:enm1="https://soap.api.nav.gov.hu/definitions/model/2.0/altalanos_iranyitoszam"
+        xmlns:meta="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+        xmlns:tns="https://soap.api.nav.gov.hu/definitions/model/2.0/VHJOV/12.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="https://soap.api.nav.gov.hu/definitions/model/2.0/VHJOV/12.0">
+   <import namespace="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+           schemaLocation="form_xsd_metaschema.xsd"/>
+   <import namespace="https://soap.api.nav.gov.hu/definitions/model/2.0/baseForm/1.0"
+           schemaLocation="baseForm.xsd"/>
+   <import namespace="https://soap.api.nav.gov.hu/definitions/model/2.0/altalanos_iranyitoszam"
+           schemaLocation="altalanos_iranyitoszam.xsd"/>
+   <element name="Doc_VHJOV"
+            type="tns:Doc_VHJOV_Type"
+            meta:metaType="DocMetaType">
+      <annotation>
+         <documentation>Elektronikus visszaigazolás jövedelem letiltásról</documentation>
+      </annotation>
+      <xs:unique name="uniqueFileId_Attachment_1">
+         <xs:selector xpath="Form_VHJOV/Attachment_1"/>
+         <xs:field xpath="fileId"/>
+      </xs:unique>
+   </element>
+   <complexType name="Doc_VHJOV_Type">
+      <annotation>
+         <documentation>A teljes bizonylat szerkezetet leíró típus</documentation>
+      </annotation>
+      <sequence>
+         <element name="Form_VHJOV"
+                  type="tns:Form_VHJOV_Type"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>VHJOV részbizonylat</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <simpleType name="Enum_VHJOV_0A0001D0010AA">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="M">
+            <annotation>
+               <documentation>M=módosítás</documentation>
+            </annotation>
+         </enumeration>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_VHJOV_egyseges_kozterulet_jelleg_szekhely_1">
+      <annotation>
+         <documentation>Enum értékek egyseges_kozterulet_jelleg_szekhely mátrix 1. oszlopból.</documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="út"/>
+         <enumeration value="utca"/>
+         <enumeration value="tér"/>
+         <enumeration value="köz"/>
+         <enumeration value="akna"/>
+         <enumeration value="akna-alsó"/>
+         <enumeration value="akna-felső"/>
+         <enumeration value="alagút"/>
+         <enumeration value="alsórakpart"/>
+         <enumeration value="arborétum"/>
+         <enumeration value="autóút"/>
+         <enumeration value="állat és növ.kert"/>
+         <enumeration value="állomás"/>
+         <enumeration value="árnyék"/>
+         <enumeration value="árok"/>
+         <enumeration value="átjáró"/>
+         <enumeration value="barakképület"/>
+         <enumeration value="barlang"/>
+         <enumeration value="bánya"/>
+         <enumeration value="bányatelep"/>
+         <enumeration value="bástya"/>
+         <enumeration value="bástyája"/>
+         <enumeration value="bejáró"/>
+         <enumeration value="bekötőút"/>
+         <enumeration value="csárda"/>
+         <enumeration value="csónakházak"/>
+         <enumeration value="domb"/>
+         <enumeration value="dűlő"/>
+         <enumeration value="dűlősor"/>
+         <enumeration value="dűlőterület"/>
+         <enumeration value="dűlőút"/>
+         <enumeration value="egyetemváros"/>
+         <enumeration value="egyéb"/>
+         <enumeration value="elágazás"/>
+         <enumeration value="emlékút"/>
+         <enumeration value="erdészház"/>
+         <enumeration value="erdészlak"/>
+         <enumeration value="erdő"/>
+         <enumeration value="erdősor"/>
+         <enumeration value="fasor"/>
+         <enumeration value="fasora"/>
+         <enumeration value="felső"/>
+         <enumeration value="forduló"/>
+         <enumeration value="föld"/>
+         <enumeration value="főmérnökség"/>
+         <enumeration value="főtér"/>
+         <enumeration value="főút"/>
+         <enumeration value="gát"/>
+         <enumeration value="gátőrház"/>
+         <enumeration value="gátsor"/>
+         <enumeration value="gyár"/>
+         <enumeration value="gyártelep"/>
+         <enumeration value="gyárváros"/>
+         <enumeration value="gyümölcsös"/>
+         <enumeration value="határsor"/>
+         <enumeration value="határút"/>
+         <enumeration value="ház"/>
+         <enumeration value="hegy"/>
+         <enumeration value="hegyhát"/>
+         <enumeration value="hegyhát dűlő"/>
+         <enumeration value="hegyhát köz"/>
+         <enumeration value="hídfő"/>
+         <enumeration value="hrsz."/>
+         <enumeration value="iskola"/>
+         <enumeration value="játszótér"/>
+         <enumeration value="kapu"/>
+         <enumeration value="kastély"/>
+         <enumeration value="kert"/>
+         <enumeration value="kertsor"/>
+         <enumeration value="kilátó"/>
+         <enumeration value="kioszk"/>
+         <enumeration value="kocsiszín"/>
+         <enumeration value="kolónia"/>
+         <enumeration value="korzó"/>
+         <enumeration value="kör"/>
+         <enumeration value="körönd"/>
+         <enumeration value="körtér"/>
+         <enumeration value="körút"/>
+         <enumeration value="körvasútsor"/>
+         <enumeration value="körzet"/>
+         <enumeration value="kultúrpark"/>
+         <enumeration value="kunyhó"/>
+         <enumeration value="kút"/>
+         <enumeration value="kültelek"/>
+         <enumeration value="külterület"/>
+         <enumeration value="lakóház"/>
+         <enumeration value="lakónegyed"/>
+         <enumeration value="lakópark"/>
+         <enumeration value="lakótelep"/>
+         <enumeration value="lejáró"/>
+         <enumeration value="lejtő"/>
+         <enumeration value="lépcső"/>
+         <enumeration value="liget"/>
+         <enumeration value="major"/>
+         <enumeration value="malom"/>
+         <enumeration value="menedékház"/>
+         <enumeration value="mélyút"/>
+         <enumeration value="munkásszálló"/>
+         <enumeration value="műút"/>
+         <enumeration value="oldal"/>
+         <enumeration value="orom"/>
+         <enumeration value="őrház"/>
+         <enumeration value="őrházak"/>
+         <enumeration value="őrházlak"/>
+         <enumeration value="park"/>
+         <enumeration value="parkja"/>
+         <enumeration value="parkoló"/>
+         <enumeration value="part"/>
+         <enumeration value="pavilon"/>
+         <enumeration value="pálya"/>
+         <enumeration value="pályaudvar"/>
+         <enumeration value="piac"/>
+         <enumeration value="pihenő"/>
+         <enumeration value="pince"/>
+         <enumeration value="pincesor"/>
+         <enumeration value="puszta"/>
+         <enumeration value="rakpart"/>
+         <enumeration value="repülőtér"/>
+         <enumeration value="rész"/>
+         <enumeration value="rét"/>
+         <enumeration value="sarok"/>
+         <enumeration value="sánc"/>
+         <enumeration value="sávház"/>
+         <enumeration value="sétány"/>
+         <enumeration value="sor"/>
+         <enumeration value="sora"/>
+         <enumeration value="sportpálya"/>
+         <enumeration value="sporttelep"/>
+         <enumeration value="stadion"/>
+         <enumeration value="strandfürdő"/>
+         <enumeration value="sugárút"/>
+         <enumeration value="szállás"/>
+         <enumeration value="szállások"/>
+         <enumeration value="szer"/>
+         <enumeration value="szél"/>
+         <enumeration value="sziget"/>
+         <enumeration value="szivattyútelep"/>
+         <enumeration value="szőlő"/>
+         <enumeration value="szőlőhegy"/>
+         <enumeration value="szőlők"/>
+         <enumeration value="tag"/>
+         <enumeration value="tanya"/>
+         <enumeration value="tanyák"/>
+         <enumeration value="telep"/>
+         <enumeration value="temető"/>
+         <enumeration value="tere"/>
+         <enumeration value="tető"/>
+         <enumeration value="téli kikötő"/>
+         <enumeration value="tömb"/>
+         <enumeration value="turistaház"/>
+         <enumeration value="udvar"/>
+         <enumeration value="utak"/>
+         <enumeration value="utcája"/>
+         <enumeration value="útja"/>
+         <enumeration value="útőrház"/>
+         <enumeration value="üdülő"/>
+         <enumeration value="üdülő-part"/>
+         <enumeration value="üdülő-sor"/>
+         <enumeration value="üdülő-telep"/>
+         <enumeration value="vadaskert"/>
+         <enumeration value="vadászház"/>
+         <enumeration value="vasútállomás"/>
+         <enumeration value="vasúti megálló"/>
+         <enumeration value="vasúti őrház"/>
+         <enumeration value="vasútsor"/>
+         <enumeration value="vágóhíd"/>
+         <enumeration value="vár"/>
+         <enumeration value="várköz"/>
+         <enumeration value="város"/>
+         <enumeration value="vezetőút"/>
+         <enumeration value="villasor"/>
+         <enumeration value="vízmű"/>
+         <enumeration value="völgy"/>
+         <enumeration value="zsilip"/>
+         <enumeration value="zug"/>
+         <enumeration value="autópálya"/>
+         <enumeration value="hajóállomás"/>
+         <enumeration value="várkerület"/>
+         <enumeration value="vitorláskikötő"/>
+         <enumeration value="u."/>
+         <enumeration value="u"/>
+         <enumeration value="kerület"/>
+         <enumeration value="útgyűrű"/>
+         <enumeration value="üdülősétány"/>
+         <enumeration value="aluljáró"/>
+         <enumeration value="lakókert"/>
+         <enumeration value="kertalja"/>
+         <enumeration value="csatornaőrház"/>
+         <enumeration value="erdeje"/>
+         <enumeration value="telek"/>
+         <enumeration value="útfél"/>
+         <enumeration value="széle"/>
+         <enumeration value="bokor"/>
+         <enumeration value="lak"/>
+         <enumeration value="járás"/>
+         <enumeration value="kertváros"/>
+         <enumeration value="szektor"/>
+      </restriction>
+   </simpleType>
+   <complexType name="Form_VHJOV_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány VHJOV részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_VHJOV_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Elektronikus visszaigazolás jövedelem letiltásról</documentation>
+            </annotation>
+         </element>
+         <element name="Attachment_1"
+                  type="baseForm:AttachmentType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"
+                  meta:metaType="AttachmentMetaType">
+            <annotation>
+               <documentation>EMEGKER (EMEGKERH) csatolmányai; File Extensions:PDF;ZIP;BMP;JPG;JPEG;GIF;TIF;PNG;XML</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_VHJOV_120001_Type">
+      <annotation>
+         <documentation>Elektronikus visszaigazolás jövedelem letiltásról</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120010"
+                  type="tns:FieldGroup_VHJOV_120010_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Munkáltató, visszaigazoló szervezet adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120011"
+                  type="tns:FieldGroup_VHJOV_120011_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Módosítandó visszaigazolás adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120012"
+                  type="tns:FieldGroup_VHJOV_120012_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>A letiltással érintett személy adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120017"
+                  type="tns:FieldGroup_VHJOV_120017_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>A visszaigazolás adatai</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_VHJOV_120010_Type">
+      <annotation>
+         <documentation>Munkáltató, visszaigazoló szervezet adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C0001AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószám (A1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0002AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Teljes név (A2)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0003CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Székhelye (C3)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="enm1:altalanos_iranyitoszam_2">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="4"/>
+                        <pattern value="[0-9]+"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0003DA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>város/ község (D3)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="enm1:altalanos_iranyitoszam_1">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="80"/>
+                        <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0003EA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>közterület neve (E3)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0003FA"
+                  minOccurs="0"
+                  type="tns:Enum_VHJOV_egyseges_kozterulet_jelleg_szekhely_1"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>közterület jellege (F3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C0003GA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>házszám (G3)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="15"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0003HA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>épület (H3)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0003IA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>lépcsőház (I3)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0003JA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>emelet (J3)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0003KA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>ajtó (K3)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0004AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügyintéző neve (A4)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0004BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Közvetlen telefonszáma (B4)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="20"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_VHJOV_120011_Type">
+      <annotation>
+         <documentation>Módosítandó visszaigazolás adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001D0010AA"
+                  minOccurs="0"
+                  type="tns:Enum_VHJOV_0A0001D0010AA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Kérem a visszaigazolás módosítását (M) (A10)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001D0011AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Alap megkeresésre a NAV-tól kapott hivatkozási (azonosító) szám (A11)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001D0012AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Módosítás oka (A12)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="160"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_VHJOV_120012_Type">
+      <annotation>
+         <documentation>A letiltással érintett személy adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001E0015AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóazonosító jel (A15)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0016AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Teljes név (A16)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0017CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Lakóhelye/ tartózkodási helye (C17)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="enm1:altalanos_iranyitoszam_2">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="4"/>
+                        <pattern value="[0-9]+"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0017DA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>város/ község (D17)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="enm1:altalanos_iranyitoszam_1">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="80"/>
+                        <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0017EA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>közterület neve (E17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0017FA"
+                  minOccurs="0"
+                  type="tns:Enum_VHJOV_egyseges_kozterulet_jelleg_szekhely_1"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>közterület jellege (F17)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0017GA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>házszám (G17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="15"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0017HA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>épület (H17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0017IA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>lépcsőház (I17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0017JA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>emelet (J17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0017KA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>ajtó (K17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_VHJOV_120017_Type">
+      <annotation>
+         <documentation>A visszaigazolás adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001F0020AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A letiltás ügyszáma (A20)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F0020BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A letiltás iktatószáma (B20)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F0021AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A letiltás foganatba vétele megtörtént (A21)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0021BA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első levonás dátuma (B21)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0021CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Havonta vonható minimális összeg [Ft] (C21)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="7"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F0022AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az adózó jövedelmét a Vht. 165.§.a szerinti kielégítési sorrend alapján az Önök követelését megelőző (A22)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0022BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(B22)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F0022CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A letiltást előjegyeztük. A letiltás előreláthatólag a következő napon kezdődhet: (C22)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0022DA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Havonta vonható minimális összeg [Ft] (D22)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="7"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F0023AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az adózó munkaviszonya megszűnt (A23)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0023BA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(B23)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0023CA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Tudomásunk szerint az adózó új munkahelye (C23)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0023DA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(D23)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="160"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F0023FA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az adózó új munkahelyét nem ismerjük. (F23)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0024AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>- mert adózó előttünk ismeretlen. (A24)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F50000A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>- mivel nem éri el a minimálbér nettó összegének 60%-át. (B24)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F50001A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>- mert kizárólag végrehajtás alól mentes ellátásban részesül. (C24)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F50002A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>- mert az adózó elhunyt. (D24)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F0025AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Megjegyzés (A25)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="160"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+</schema>
